@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SoundCloud - Connect</title>
+</head>
+<body>
+
+<script>
+    document.onload = function () {
+    window.opener.setTimeout(window.opener.SC.connectCallback, 1);
+    }
+    
+    SC.connect(function () {
+  SC.get("/me", function (response) {
+    console.log("Welcome" + response.username);
+  });
+});
+</script>
+
+</body>
+</html>
